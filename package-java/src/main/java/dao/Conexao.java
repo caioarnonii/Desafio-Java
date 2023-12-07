@@ -7,7 +7,7 @@ public class Conexao {
     private JdbcTemplate conexaoDoBanco;
     public Conexao() {
         MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setDatabaseName("mydb");
+        dataSource.setDatabaseName("desafioJava");
         dataSource.setUser("JavaUser");
         dataSource.setPassword("Java2@23");
 

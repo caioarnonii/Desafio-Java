@@ -2,7 +2,7 @@ package model;
 
 public class ComputadorModel {
 
-    private Integer idComputador;
+    private Integer id;
     private Integer fkUsuario;
     private String ip;
     private String sistemaOperacional;
@@ -10,14 +10,14 @@ public class ComputadorModel {
     private String tempoAtividade;
 
     public ComputadorModel(
-            Integer idComputador,
+            Integer id,
             Integer fkUsuario,
             String ip,
             String sistemaOperacional,
             String fabricante,
             String tempoAtividade
     ) {
-        this.idComputador = idComputador;
+        this.id = id;
         this.fkUsuario = fkUsuario;
         this.ip = ip;
         this.sistemaOperacional = sistemaOperacional;
@@ -27,11 +27,11 @@ public class ComputadorModel {
 
 
     public Integer getIdComputador() {
-        return idComputador;
+        return id;
     }
 
     public void setIdComputador(Integer idComputador) {
-        this.idComputador = idComputador;
+        this.id = idComputador;
     }
 
     public Integer getFkUsuario() {

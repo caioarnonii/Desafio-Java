@@ -7,5 +7,7 @@ public class Main {
         UsuarioDao usuarioDao = new UsuarioDao();
 
         usuarioDao.cadastrarUsuario("Caio", "Caio@gmail.com", "caio123");
+
+        usuarioDao.buscarUsuario("edu@gmail.com");
     }
 }
