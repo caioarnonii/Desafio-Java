@@ -1,10 +1,10 @@
-package school.sptech.model;
+package model;
 
-public abstract class Componente {
+public abstract class ComponenteModel {
 
     private String nome;
 
-    public Componente(String nome) {
+    public ComponenteModel(String nome) {
         this.nome = nome;
     }
 

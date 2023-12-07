@@ -1,13 +1,13 @@
-package school.sptech.model;
+package model;
 
-public class Usuario {
+public class UsuarioModel {
 
     private Integer id;
     private String nome;
     private String email;
     private String senha;
 
-    public Usuario(
+    public UsuarioModel(
             Integer id,
             String nome,
             String email,

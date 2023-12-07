@@ -1,6 +1,6 @@
-package school.sptech.model;
+package model;
 
-public class Computador{
+public class ComputadorModel {
 
     private Integer idComputador;
     private Integer fkUsuario;
@@ -9,7 +9,7 @@ public class Computador{
     private String fabricante;
     private String tempoAtividade;
 
-    public Computador(
+    public ComputadorModel(
             Integer idComputador,
             Integer fkUsuario,
             String ip,
