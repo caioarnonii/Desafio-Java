@@ -1,4 +1,4 @@
-# Roteiro de Execução
+# Instruções de Execução
 
 ### Criação do Banco de Dados MySQL
 Execute o arquivo ```script_desafio_java.sql``` com um SGBD MySQL
