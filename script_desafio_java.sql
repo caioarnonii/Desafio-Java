@@ -1,29 +1,10 @@
+-- Active: 1698205327640@@127.0.0.1@3306@streamoon
+DROP DATABASE IF EXISTS desafioJava;
 CREATE DATABASE IF NOT EXISTS desafioJava;
 USE desafioJava;
 
-CREATE TABLE IF NOT EXISTS Usuario (
-  idUsuario INT AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL,
-  email VARCHAR(100) NOT NULL,
-  senha VARCHAR(100) NOT NULL,
-  PRIMARY KEY (idUsuario)
-  ) AUTO_INCREMENT = 1;
-  
-  SELECT * FROM Usuario;
-    
-CREATE TABLE IF NOT EXISTS Computador (
-  idComputador INT NOT NULL AUTO_INCREMENT,
-  fkUsuario INT NOT NULL,
-  ip VARCHAR(100) NOT NULL,
-  sistemaOperacional VARCHAR(45) NOT NULL,
-  fabricante VARCHAR(45) NOT NULL,
-  tempoAtividade VARCHAR(45) NOT NULL,
-  PRIMARY KEY (idComputador),
-  FOREIGN KEY (fkUsuario) REFERENCES Usuario (idUsuario)
-) AUTO_INCREMENT = 1;
-
 CREATE TABLE IF NOT EXISTS UnidadeMedida (
-  idUnidadeMedida INT NOT NULL,
+  idUnidadeMedida INT NOT NULL AUTO_INCREMENT,
   tipoMedida VARCHAR(45) NOT NULL,
   PRIMARY KEY (idUnidadeMedida)
 ) AUTO_INCREMENT = 1;
@@ -37,22 +18,13 @@ CREATE TABLE IF NOT EXISTS Componente (
   FOREIGN KEY (fkUnidadeMedida) REFERENCES UnidadeMedida (idUnidadeMedida)
 ) AUTO_INCREMENT = 1;
 
-CREATE TABLE IF NOT EXISTS ComputadorComponente (
-  fkComputador INT NOT NULL,
-  fkComponente INT NOT NULL,
-  idComputadorComponente INT NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (idComputadorComponente),
-  FOREIGN KEY (fkComputador) REFERENCES Computador (idComputador),
-  FOREIGN KEY (fkComponente) REFERENCES Componente (idComponente)
-) AUTO_INCREMENT = 1;
-
 CREATE TABLE IF NOT EXISTS Registro (
   idRegistro INT NOT NULL AUTO_INCREMENT,
-  dadoRegistro VARCHAR(100),
-  dataHora DATETIME,
-  fkComputadorComponente INT NOT NULL,
+  dadoRegistro DOUBLE,
+  dataHora DATETIME DEFAULT CURRENT_TIMESTAMP,
+  fkComponente INT NOT NULL,
   PRIMARY KEY (idRegistro),
-  FOREIGN KEY (fkComputadorComponente) REFERENCES ComputadorComponente (fkComputador)
+  FOREIGN KEY (fkComponente) REFERENCES Componente (idComponente)
 ) AUTO_INCREMENT = 1;
 
 CREATE TABLE IF NOT EXISTS UnidadeMedida (
@@ -68,7 +40,10 @@ GRANT ALL PRIVILEGES ON desafioJava.* TO 'JavaUser'@'%';
 FLUSH PRIVILEGES;
 
 
+INSERT INTO UnidadeMedida (tipoMedida) VALUES ('%');
 
-
-
+INSERT INTO Componente (fkUnidadeMedida, nomeComponente) VALUES
+(1, 'CPU'),
+(1, 'MEMORIA'),
+(1, 'DISCO');
 
