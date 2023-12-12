@@ -1,3 +1,5 @@
+[Instruções de Execução](https://github.com/caioarnonii/Desafio-Java/blob/main/run.md)
+
 *Desafio Java*
 
 Desafio de Programação Java: Monitoramento de Sistema com Princípios SOLID
