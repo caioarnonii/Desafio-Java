@@ -4,7 +4,7 @@
 Execute o arquivo ```script_desafio_java.sql``` com um SGBD MySQL
 
 ### Execução do Sistema
-Rode o comando na pasta raiz
+Execute o comando na pasta raiz
 ```shell
 java -jar sistema.jar
 ``` 
